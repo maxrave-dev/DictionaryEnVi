@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Collections;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.NetworkInformation;
 
 namespace Dictionary2
 {
@@ -25,8 +27,8 @@ namespace Dictionary2
             var preMeaning = dict[word];
             preMeaning = preMeaning.Replace(@"\n", ".");
             string[] meaning = preMeaning.Split('.');
-            string result = "";
-            for (int i = 0; i < meaning.Length; i++)
+            string result = meaning[0];
+            for (int i = 1; i < meaning.Length; i++)
             {
                 result += "\n" + meaning[i];
             }
@@ -35,6 +37,7 @@ namespace Dictionary2
         private void DictEnVi_Load(object sender, EventArgs e)
         {
             SetData();
+            lbListWords.Items.AddRange(dict.Keys.ToArray());
         }
         private void btSearch_Click(object sender, EventArgs e)
         {
@@ -60,15 +63,47 @@ namespace Dictionary2
         {
             try
             {
-                //var path = @"C:\Users\mxrvm\Desktop\Code Project\C#\CTDL và Giải thuật\Dictionary\Dictionary2\star_anhviet.txt";
-                string[] lines = File.ReadAllLines("star_anhviet.txt", Encoding.UTF8);
-                for (int i = 0; i < lines.Length; i++)
+                StreamReader sr = new StreamReader("star_anhviet.txt", Encoding.UTF8);
+                string lines = sr.ReadLine();
+                while (lines!= null)
                 {
-                    string[] devide = lines[i].Split('\t');
-                    dict.Add(devide[0], devide[1]);
+                    string[] words = lines.Split('\t');
+                    if (dict.ContainsKey(words[0]) == true && dict.ContainsValue(words[1]) == false)
+                    {
+                        dict.Add(words[0] + " ", words[1]);
+                    }
+
+                    else
+                    {
+                        dict.Add(words[0], words[1]);
+                    }
+                    lines = sr.ReadLine();
                 }
             }
             catch (Exception ex) { }
+        }
+
+        private void gitHubToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string githubUrl = "https://github.com/maxrave-dev/DictionaryEnVi";
+            Process.Start(githubUrl);
+        }
+
+        private void danhSáchNhómToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Lead: Nguyễn Đức Tuấn Minh\nNguyễn Thị Phương Thảo\nLê Bá Kha\nThân Trọng Đức", "Danh sách thành viên");
+        }
+
+        private void starDictViToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string githubUrl = "https://github.com/dynamotn/stardict-vi";
+            Process.Start(githubUrl);
+        }
+
+        private void starDictToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string url = "http://www.huzheng.org/stardict/";
+            Process.Start(url);
         }
     }
 }
