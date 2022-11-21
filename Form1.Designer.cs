@@ -32,6 +32,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gitHubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.danhSáchNhómToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nguồnFileTừĐiểnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.starDictToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.starDictViToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbSearch = new System.Windows.Forms.Label();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.lbDictInfo = new System.Windows.Forms.Label();
@@ -40,11 +44,7 @@
             this.lbMeaning = new System.Windows.Forms.Label();
             this.rtbMeaning = new System.Windows.Forms.RichTextBox();
             this.btSearch = new System.Windows.Forms.Button();
-            this.danhSáchNhómToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbBackground = new System.Windows.Forms.Label();
-            this.nguồnFileTừĐiểnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.starDictToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.starDictViToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,35 @@
             this.gitHubToolStripMenuItem.Text = "GitHub";
             this.gitHubToolStripMenuItem.Click += new System.EventHandler(this.gitHubToolStripMenuItem_Click);
             // 
+            // danhSáchNhómToolStripMenuItem
+            // 
+            this.danhSáchNhómToolStripMenuItem.Name = "danhSáchNhómToolStripMenuItem";
+            this.danhSáchNhómToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.danhSáchNhómToolStripMenuItem.Text = "Danh sách Nhóm";
+            this.danhSáchNhómToolStripMenuItem.Click += new System.EventHandler(this.danhSáchNhómToolStripMenuItem_Click);
+            // 
+            // nguồnFileTừĐiểnToolStripMenuItem
+            // 
+            this.nguồnFileTừĐiểnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.starDictToolStripMenuItem,
+            this.starDictViToolStripMenuItem});
+            this.nguồnFileTừĐiểnToolStripMenuItem.Name = "nguồnFileTừĐiểnToolStripMenuItem";
+            this.nguồnFileTừĐiểnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nguồnFileTừĐiểnToolStripMenuItem.Text = "Nguồn File Từ điển";
+            // 
+            // starDictToolStripMenuItem
+            // 
+            this.starDictToolStripMenuItem.Name = "starDictToolStripMenuItem";
+            this.starDictToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.starDictToolStripMenuItem.Text = "StarDict";
+            // 
+            // starDictViToolStripMenuItem
+            // 
+            this.starDictViToolStripMenuItem.Name = "starDictViToolStripMenuItem";
+            this.starDictViToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.starDictViToolStripMenuItem.Text = "StarDict Vi - Cre: dynamotn";
+            this.starDictViToolStripMenuItem.Click += new System.EventHandler(this.starDictViToolStripMenuItem_Click);
+            // 
             // lbSearch
             // 
             this.lbSearch.AutoSize = true;
@@ -100,7 +129,7 @@
             this.lbDictInfo.Name = "lbDictInfo";
             this.lbDictInfo.Size = new System.Drawing.Size(129, 15);
             this.lbDictInfo.TabIndex = 3;
-            this.lbDictInfo.Text = "Đồ Án Từ Điển Nhóm 3";
+            this.lbDictInfo.Text = "Đồ Án Từ Điển Nhóm 4";
             // 
             // lbSearchResult
             // 
@@ -151,13 +180,6 @@
             this.btSearch.UseVisualStyleBackColor = true;
             this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
-            // danhSáchNhómToolStripMenuItem
-            // 
-            this.danhSáchNhómToolStripMenuItem.Name = "danhSáchNhómToolStripMenuItem";
-            this.danhSáchNhómToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.danhSáchNhómToolStripMenuItem.Text = "Danh sách Nhóm";
-            this.danhSáchNhómToolStripMenuItem.Click += new System.EventHandler(this.danhSáchNhómToolStripMenuItem_Click);
-            // 
             // lbBackground
             // 
             this.lbBackground.AutoSize = true;
@@ -165,29 +187,7 @@
             this.lbBackground.Name = "lbBackground";
             this.lbBackground.Size = new System.Drawing.Size(169, 13);
             this.lbBackground.TabIndex = 9;
-            this.lbBackground.Text = "Từ điển nhóm 3 môn CTDL và GT";
-            // 
-            // nguồnFileTừĐiểnToolStripMenuItem
-            // 
-            this.nguồnFileTừĐiểnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.starDictToolStripMenuItem,
-            this.starDictViToolStripMenuItem});
-            this.nguồnFileTừĐiểnToolStripMenuItem.Name = "nguồnFileTừĐiểnToolStripMenuItem";
-            this.nguồnFileTừĐiểnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.nguồnFileTừĐiểnToolStripMenuItem.Text = "Nguồn File Từ điển";
-            // 
-            // starDictToolStripMenuItem
-            // 
-            this.starDictToolStripMenuItem.Name = "starDictToolStripMenuItem";
-            this.starDictToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.starDictToolStripMenuItem.Text = "StarDict";
-            // 
-            // starDictViToolStripMenuItem
-            // 
-            this.starDictViToolStripMenuItem.Name = "starDictViToolStripMenuItem";
-            this.starDictViToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.starDictViToolStripMenuItem.Text = "StarDict Vi - Cre: dynamotn";
-            this.starDictViToolStripMenuItem.Click += new System.EventHandler(this.starDictViToolStripMenuItem_Click);
+            this.lbBackground.Text = "Từ điển nhóm 4 môn CTDL và GT";
             // 
             // DictEnVi
             // 
@@ -208,7 +208,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "DictEnVi";
-            this.Text = "Từ điển Anh Việt - Đồ án cuối kỳ nhóm 3";
+            this.Text = "Từ điển Anh Việt - Đồ án cuối kỳ nhóm 4";
             this.Load += new System.EventHandler(this.DictEnVi_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
